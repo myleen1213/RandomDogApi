@@ -1,32 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <RelativeLayout xmlns:android= "http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/r1layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/searchButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.765"
-        tools:srcCompat="@tools:sample/avatars" />
+    tools:context=".MainActivity"
+    android:background="@drawable/gradient_list">
 
     <Button
-        android:id="@+id/searchButton"
+        android:id="@+id/backButton"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginBottom="60dp"
+        android:text="Prev.." />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="71dp"
+        android:layout_marginRight="71dp"
+        android:layout_marginBottom="62dp"
+        android:text="FETCH" />
+
+    <com.agrawalsuneet.dotsloader.loaders.LazyLoader
+        android:id="@+id/dots_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:layout_marginTop="30dp"
+        app:lazyloader_animDur="400"
+        app:lazyloader_dotsDist="10dp"
+        app:lazyloader_dotsRadius="7dp"
+        app:lazyloader_firstDelayDur="150"
+        app:lazyloader_firstDotColor="#fff"
+        app:lazyloader_interpolator="@android:anim/decelerate_interpolator"
+        app:lazyloader_secondDelayDur="300"
+        app:lazyloader_secondDotColor="#fff"
+        app:lazyloader_thirdDotColor="#fff" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/iv_random_dog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_margin="0dp"
+            android:scaleType="fitCenter" />
+
+</RelativeLayout>
