@@ -8,6 +8,7 @@
     tools:context=".MainActivity"
     android:background="@drawable/gradient_list">
 
+
     <Button
         android:id="@+id/backButton"
         android:layout_width="110dp"
